@@ -122,9 +122,16 @@ public class Lecture {
     13. Write an if/else statement that returns "Fizz" if the parameter is 3, "Buzz" if the parameter is 5 and an empty String for anything else.
     */
     public String returnFizzOrBuzzOrNothing(int number) {
-        return "";
+    	if(number == 3) {
+    		return "Fizz";
+    	} 
+    	else if(number == 5) {
+    		return "Buzz";
     }
-
+    	else {
+    				return "";
+    	}
+    }
     /*
     14. Write an if statement that checks if the parameter number is either equal to or greater than 18. Return "Adult" if it is or "Minor" if it's not.
     */

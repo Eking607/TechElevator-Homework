@@ -36,6 +36,7 @@ byte seasonOfFirefly = 1;
 		/*
 		5. Create a variable called myFavoriteLanguage and set it to "Java".
 		*/
+String myFavoriteLanguage = "Java";
 
 		//System.out.println(myFavoriteLanguage);
 
