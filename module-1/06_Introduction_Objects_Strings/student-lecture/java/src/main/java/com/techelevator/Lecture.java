@@ -36,7 +36,7 @@ public class Lecture {
 		 * trim
 		 */
 
-		System.out.println();
+	/*	System.out.println();
 		System.out.println("**********************");
 		System.out.println("****** EQUALITY ******");
 		System.out.println("**********************");
@@ -46,7 +46,7 @@ public class Lecture {
 
 		/* Double equals will compare to see if the two variables, hello1 and
 		 * hello2 point to the same object in memory. Are they the same object? */
-		if (hello1 == hello2) {
+	/*	if (hello1 == hello2) {
 			System.out.println("They are equal!");
 		} else {
 			System.out.println(hello1 + " is not equal to " + hello2);
@@ -59,7 +59,7 @@ public class Lecture {
 
 		/* So, to compare the values of two objects, we need to use the equals method.
 		 * Every object type has an equals method */
-		if (hello1.equals(hello2)) {
+	/*	if (hello1.equals(hello2)) {
 			System.out.println("They are equal!");
 		} else {
 			System.out.println(hello1 + " is not equal to " + hello2);
