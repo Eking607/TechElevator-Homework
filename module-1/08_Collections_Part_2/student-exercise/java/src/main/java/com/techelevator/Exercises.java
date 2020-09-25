@@ -5,9 +5,10 @@ import java.util.Map;
 
 public class Exercises {
 
-	/*
-	 * Given the name of an animal, return the name of a group of that animal
-	 * (e.g. "Elephant" -> "Herd", "Rhino" - "Crash").
+	/* Map<T, T> identifier = new HashMap<T, T>();
+	 * 
+	 * 
+ 	 * Given the name of an animal, return the name of a group of that animal (e.g. "Elephant" -> "Herd", "Rhino" - "Crash").
 	 *
 	 * The animal name should be case insensitive so "elephant", "Elephant", and
 	 * "ELEPHANT" should all return "herd".
@@ -34,7 +35,10 @@ public class Exercises {
 	 *
 	 */
 	public String animalGroupName(String animalName) {
-		return null;
+
+		return animalName;
+
+
 	}
 
 	/*
@@ -64,8 +68,7 @@ public class Exercises {
 	}
 
 	/*
-	 * Modify and return the given Map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
-	 * but only if Paul has less than $10s.
+	 * Modify and return the given Map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul", but only if Paul has less than $10s.
 	 *
 	 * Note, monetary amounts are specified in cents: penny=1, nickel=5, ... $1=100, ... $10=1000, ...
 	 *
@@ -99,7 +102,9 @@ public class Exercises {
 	 * beginningAndEnding(["muddy", "good", "moat", "good", "night"]) → {"g": "d", "m": "t", "n": "t"}
 	 */
 	public Map<String, String> beginningAndEnding(String[] words) {
+	
 		return null;
+		
 	}
 
 	/*
@@ -115,7 +120,19 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Integer> wordCount(String[] words) {
-		return null;
+		Map<String, Integer> map = new HashMap<String, Integer>(); 
+		
+		for (String str: words) {
+			
+			if(!map.containsKey(str)) {
+				map.put(str, 1);
+			}
+			else {
+				int count = map.get(str);
+				map.put(str, count + 1);
+			}
+		}
+			return map;
 	}
 
 	/*
@@ -130,8 +147,23 @@ public class Exercises {
 	 *
 	 */
 	public Map<Integer, Integer> integerCount(int[] ints) {
-		return null;
-	}
+
+	Map<Integer, Integer> map = new HashMap<>();
+
+			    for (int i = 0; i < ints.length; ++i) {
+
+			      if (!(map.containsKey(ints[i]))) {
+			        map.put(ints[i], 1);
+			        
+			      } else {
+			        
+			    	  map.merge(ints[i], 1, Integer::sum);
+			      }
+
+			    }
+			    return map;
+			  }
+	
 
 	/*
 	 * Given an array of Strings, return a Map<String, Boolean> where each different String is a key and value
@@ -143,7 +175,20 @@ public class Exercises {
 	 *
 	 */
 	public Map<String, Boolean> wordMultiple(String[] words) {
-		return null;
+	
+		Map<String, Boolean> map = new HashMap<>();
+		
+		for(String s : words) {
+			
+			if (!map.containsKey(s)) {
+				
+				map.put(s, false);
+			}
+			
+			else {
+				map.put(s,  true);}
+			} 
+		return map;
 	}
 
 	/*
