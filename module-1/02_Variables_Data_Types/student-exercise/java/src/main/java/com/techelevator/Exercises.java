@@ -497,6 +497,18 @@ public class Exercises {
         Hint: Calculate the hourly rate for each painter, combine them, and then divide the total walls in feet by the combined hourly rate of the painters.
         Challenge: How many days will it take the pair to paint 623 rooms assuming they work 8 hours a day?.
         */
+		
+		double billAverage = 2.15;
+		double jillAverage = 1.90;
+		int rooms = 5;
+		double billsTotal = billAverage * rooms;
+		double jillsTotal = jillAverage * rooms;
+		
+		double totalTime = (billsTotal + jillsTotal) / 5;
+		
+		System.out.println(totalTime);
+		
+		
 
         /*
         Create and assign variables to hold your first name, last name, and middle initial. Using concatenation,
@@ -512,6 +524,17 @@ public class Exercises {
         Hint: The percent completed is the miles already travelled divided by the total miles.
         Challenge: Display as an integer value between 0 and 100 using casts.
         */
+
+		int n = 15;
+
+		if (n % 5 == 0) {
+		  // Fizz
+		} else if (n % 3 == 0) {
+		  // Buzz
+		} else if (n % 3 == 0 && n % 5 == 0) {
+		  // FizzBuzz
+		}
+		System.out.println(n);
 
 
 	}

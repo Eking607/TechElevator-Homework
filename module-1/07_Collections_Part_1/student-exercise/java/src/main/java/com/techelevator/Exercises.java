@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -22,7 +23,8 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] stringArray) {
-		return null;
+	
+		return Arrays.asList(stringArray);
 	}
 
 	/*
@@ -32,7 +34,10 @@ public class Exercises {
 	 list2Array( ["Left", "Right", "Forward", "Back"] )  ->  {"Left", "Right", "Forward", "Back"}
 	 */
 	public String[] list2Array(List<String> stringList) {
-		return null;
+		
+		String[] listArray = stringList.toArray(new String[stringList.size()]); {
+		
+		return listArray; }
 	}
 
 	/*
@@ -43,9 +48,21 @@ public class Exercises {
 	 no4LetterWords( {"Jack", "Jill", "Jane", "John", "Jim"} )  ->  ["Jim"]
 	 */
 	public List<String> no4LetterWords(String[] stringArray) {
-		return null;
+			 
+	List<String> arrayList = new ArrayList<String>();
+	 	
+	if(stringArray.length > 0) {
+					for(int i = 0; i < stringArray.length; i++){
+						String words = stringArray[i];
+	 
+						if(words.length() != 4) {
+							arrayList.add(words); 
+						}
+					}
 	}
-
+	 
+			return arrayList; 
+	}
 	/*
 	 Given a List of Strings, return a new list in reverse order of the original. One obvious solution is to
 	 simply loop through the original list in reverse order, but see if you can come up with an alternative
@@ -55,7 +72,21 @@ public class Exercises {
 		-> ["way", "the", "all", "jingle", "bells", "jingle", "bells", "jingle"]
 	 */
 	public List<String> reverseList(List<String> stringList) {
-		return null;
+		
+Stack<String> stack = new Stack<String>();
+
+List<String> addToList = new ArrayList<String>();
+ 
+		for(int i = 0; i < stringList.size(); i++) {
+			
+			stack.push(stringList.get(i));
+			}
+		while(stack.size() > 0) {
+ 
+			addToList.add(stack.pop());
+ 
+		}
+		return addToList;
 	}
 
 	/*
@@ -65,7 +96,20 @@ public class Exercises {
 	 arrayInt2ListDouble( {84, 99, 3285, 13, 877} ) -> [42, 49.5, 1642.5, 6.5, 438.5]
 	 */
 	public List<Double> arrayInt2ListDouble(int[] intArray) {
-		return null;
+		
+	List<Double> arrayDoubled = new ArrayList<Double>();
+		
+	double number;
+		if(intArray.length > 0) {
+			
+			for(int i = 0; i < intArray.length; i++) {
+				
+				number = intArray[i] / 2.0;
+				arrayDoubled.add(number);
+			}
+		}
+		
+		return arrayDoubled;
 	}
 
 	/*
@@ -75,7 +119,17 @@ public class Exercises {
 	 findLargest( [34070, 1380, 81238, 7782, 234, 64362, 627] ) -> 64362
 	 */
 	public Integer findLargest(List<Integer> integerList) {
-		return null;
+		
+		int biggest = integerList.get(0);
+	 
+			for(int i = 0; i < integerList.size(); i++) {
+				
+				if(integerList.get(i) > biggest) {
+					
+					biggest = integerList.get(i);
+				}
+			}
+			return biggest;
 	}
 
 	/*
@@ -85,7 +139,15 @@ public class Exercises {
 	 oddOnly( {734, 233, 782, 811, 3, 9999} ) -> [233, 811, 3, 9999]
 	 */
 	public List<Integer> oddOnly(Integer[] integerArray) {
-		return null;
+	List<Integer> newList = new ArrayList<Integer>();
+		 
+		for(int i = 0; i < integerArray.length; i++) {
+			if(integerArray[i] % 2 == 1) {
+				
+				newList.add(integerArray[i]);
+			}
+		}
+		return newList;
 	}
 
 	/*
@@ -96,6 +158,25 @@ public class Exercises {
 	 foundIntTwice( [9, 23, 44, 2, 88, 44], 44) -> true
 	 */
 	public boolean foundIntTwice(List<Integer> integerList, int intToFind) {
+		
+		int counter = 0;
+		for(int i = 0; i < integerList.size(); i++) {
+			
+			if(integerList.get(i) == intToFind) 
+				
+
+			if(integerList.get(i) == intToFind) 
+ 
+			{
+				counter++;
+				if(counter >= 2) 
+				 
+ 
+				{
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 
@@ -113,7 +194,29 @@ public class Exercises {
 	 equals "1")
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
-		return null;
+		
+	List<String> fizz = new ArrayList<String>();
+		 
+		for(int i = 0; i < integerArray.length; i++) {
+			
+			if((integerArray[i] % 3 == 0) && (integerArray[i] % 5 == 0)) {
+				
+				fizz.add("FizzBuzz");
+			}
+			else if(integerArray[i] % 3 == 0) {
+				
+				fizz.add("Fizz");
+			}
+			else if(integerArray[i] % 5 == 0) {
+				
+				fizz.add("Buzz");
+			}else 
+				{
+				fizz.add(integerArray[i].toString());
+			}
+ 
+		}
+		return fizz;
 	}
 
 	/*
