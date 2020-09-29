@@ -1,36 +1,27 @@
 package com.techelevator;
 
-public class SimpleCheckingAccount {
+public class SimpleCheckingAccount extends BankAccount {
 	
-	private String accountHolderName;
-	private String accountNumber;
-	private int balance;
-	
-	public String getAccountHolderName() {
-		return accountHolderName;
+	public SimpleCheckingAccount(String accountHolderName, String accountNumber) {
+		super(accountHolderName, accountNumber);
 	}
 	
-	public String getAccountNumber() {
-		return accountNumber;
-	}
-	
-	public int getBalance() {
-		return balance;
-	}
-	
-	public void BankAccount(String accountHolderName, String accountNumber) {
-		this.accountHolderName = accountHolderName;
-		this.accountNumber = accountNumber;
-		
-	}
-	
-	public void BankAccount(String accountHolderName, String accountNumber, int balance) {
-		this.accountHolderName = accountHolderName;
-		this.accountNumber = accountNumber;
-		this.balance = balance;
+	public SimpleCheckingAccount(String accountHolderName, String accountNumber, int balance) {
+		super(accountHolderName, accountNumber, balance);
 	
 	}
-	
 	
 
+	@Override
+	public int withdraw(int amountToWithdraw) {
+		if (getBalance() - (amountToWithdraw) < -100) {
+			super.withdraw(amountToWithdraw);
+			
+		if (getBalance() < 0 || getBalance() > -100) {
+			super.withdraw(10);
+			}
+		}
+		return getBalance();
+	}
+	
 }

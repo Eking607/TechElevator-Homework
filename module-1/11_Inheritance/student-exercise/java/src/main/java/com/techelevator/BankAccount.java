@@ -32,7 +32,7 @@ public class BankAccount {
 	}
 	
 	public int deposit(int amountToDeposit) {
-		balance = balance + amountToDeposit;
+		balance = balance + (amountToDeposit);
 		return balance;
 	}
 	
