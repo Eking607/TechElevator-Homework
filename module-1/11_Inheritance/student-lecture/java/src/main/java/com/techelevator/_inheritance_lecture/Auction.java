@@ -15,6 +15,18 @@ public class Auction {
 	}
 
 	public boolean placeBid(Bid offeredBid) {
+		// 1. add bid to the list of all bids.
+			allBids.add(offeredBid);
+		
+		// 2. Check if bid is the new high bid; if so assign it.
+		// 3. return true if the bid is the new high bid, otherwise false.
+			
+			if (currentHighBid.getBidAmount() < offeredBid.getBidAmount()) {
+				currentHighBid = offeredBid;
+				return true;
+			}
+		// 3. return true if the bid is the new high bid, otherwise false.
+		
 		
 		return false;
 	}

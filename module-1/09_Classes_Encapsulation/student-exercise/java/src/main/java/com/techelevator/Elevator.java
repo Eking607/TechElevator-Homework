@@ -16,7 +16,7 @@ public class Elevator {
 		return currentFloor;
 	}
 	
-	public int numberOfFloors() {
+	public int getNumberOfFloors() {
 		return numberOfFloors;
 	}
 	
