@@ -12,12 +12,11 @@ public class SavingsAccount extends BankAccount {
 
     @Override
     public int withdraw(int amountToWithdraw) {
-        // only perform transaction of positive $ and room for fee
-        if (getBalance() - amountToWithdraw >= 2) {
+    	if (getBalance() - amountToWithdraw > 0) {
             super.withdraw(amountToWithdraw);
-            // Assess $2 fee if it goes below $150
-            if (getBalance() < 150) {
-                super.withdraw(2);
+       
+         if (getBalance() - amountToWithdraw < 150) {
+                super.withdraw(amountToWithdraw -2);
             }
         }
         return getBalance();

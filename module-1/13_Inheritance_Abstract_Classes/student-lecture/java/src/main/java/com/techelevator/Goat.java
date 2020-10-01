@@ -14,4 +14,9 @@ public class Goat extends FarmAnimal {
 	public String getTypeOfAnimal() {
 		return "Goat";
 	}
+
+	@Override
+	public String eat() {
+		return "Everything! Including shirts!";
+	}
 }

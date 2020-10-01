@@ -11,9 +11,15 @@ public class Cat extends FarmAnimal {
 	public String print() {
 		return "I'm a cat!!";
 	}
-	
+
 	@Override
 	public String getTypeOfAnimal() {
 		return "Cat";
 	}
+
+	@Override
+	public String eat() {
+		return "Field mouse";
+	}
+	
 }

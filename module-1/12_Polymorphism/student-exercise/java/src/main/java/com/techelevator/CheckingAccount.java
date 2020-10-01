@@ -12,15 +12,14 @@ public class CheckingAccount extends BankAccount {
 
     @Override
     public int withdraw(int amountToWithdraw) {
-        // Only allow the withdraw if the balance isn't going to go below -$100
-        if (getBalance() - amountToWithdraw > -100) {
-            // Withdraw the $$
-            super.withdraw(amountToWithdraw);
-            // If the balance dips below 0, assess $10 charge
-            if (getBalance() < 0) {
-                super.withdraw(10);
+    	if ((getBalance() - amountToWithdraw > -100) && (getBalance() - amountToWithdraw < 0)) {
+    		super.withdraw(amountToWithdraw + 10);
+        
+    	if (getBalance() - amountToWithdraw < -100) {
+                super.withdraw(amountToWithdraw);
             }
         }
         return getBalance();
     }
 }
+

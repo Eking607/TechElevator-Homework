@@ -2,12 +2,13 @@ package com.techelevator;
 
 import java.math.BigDecimal;
 
-public class FarmAnimal implements Singable, Sellable {
+public abstract class FarmAnimal implements Singable, Sellable {
 	private String name;
 	private String sound;
 	private String eatsWhat;
 	private String locationOnFarm;
 	private BigDecimal price;
+	private boolean isAsleep = false;
 	
 	public FarmAnimal(String name, String sound) {
 		this.name = name;
@@ -29,7 +30,11 @@ public class FarmAnimal implements Singable, Sellable {
 		this.name = name;
 	}
 	
-	public String getSound() {
+	public final  String getSound() {
+		if (isAsleep == true) {
+			return "zzzz";
+		}
+		
 		return sound;
 	}
 	
@@ -37,11 +42,22 @@ public class FarmAnimal implements Singable, Sellable {
 		this.sound = sound;
 	}
 	
-	public String getTypeOfAnimal() {
+	protected String getTypeOfAnimal() {
 		return "Farm Animal";
 	}
 	
 	public BigDecimal getPrice() {
 		return price;
 	}
+	
+	public void sleep() {
+		isAsleep = true;
+	}
+	
+	public void wakeUp() {
+		isAsleep = false;
+	}
+	
+	public abstract String eat();
+	
 }

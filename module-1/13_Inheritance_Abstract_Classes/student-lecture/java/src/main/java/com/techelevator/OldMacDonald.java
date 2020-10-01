@@ -6,6 +6,8 @@ import java.util.List;
 public class OldMacDonald {
 
 	public static void main(String[] args) {
+		FarmAnimal myFarmAnimal = new cat("fam Animal nam")
+	
 
 		Tractor myTractor = new Tractor("Johnny D.", "vroom");
 		
@@ -13,6 +15,7 @@ public class OldMacDonald {
 		Goat myGoat2 = new Goat("Billy Jr");
 		
 		Cat myCat = new Cat("Jorge", "Meow");
+		myCat.sleep();
 		
 		System.out.println("My goat " + myGoat.getName() + " says " + myGoat.getSound());
 		
