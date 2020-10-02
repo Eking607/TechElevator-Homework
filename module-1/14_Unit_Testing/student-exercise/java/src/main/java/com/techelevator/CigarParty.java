@@ -19,7 +19,7 @@ public class CigarParty {
         boolean withinMaxRangeOfCigars = (!isWeekend && cigars <= maximumCigarCount) || isWeekend;
         boolean successful = hasMinimumCigars && withinMaxRangeOfCigars;
 
-        return successful;
+        return successful; 
     }
 
 }

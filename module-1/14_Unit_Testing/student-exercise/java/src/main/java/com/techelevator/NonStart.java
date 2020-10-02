@@ -13,7 +13,7 @@ public class NonStart {
         if (a.length() == 0) {
             return b.substring(1);
         } else if (b.length() == 0) {
-            return a.substring(1);
+            return a.substring(1); 
         } else {
             return a.substring(1) + b.substring(1);
         }

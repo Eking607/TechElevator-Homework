@@ -1,0 +1,14 @@
+package com.techelevator;
+
+import org.junit.Test;
+import org.junit.Assert;
+
+public class WordCountTest {
+	
+	WordCountTest myWordCount = new WordCountTest();
+	
+	
+	
+	
+
+}

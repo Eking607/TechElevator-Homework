@@ -11,7 +11,7 @@ public class Less20 {
      */
     public boolean isLessThanMultipleOf20(int n) {
         boolean oneLessThanMultipleOf20 = n % 20 == 19;
-        boolean twoLessThanMultipleOf20 = n % 20 == 18;
+        boolean twoLessThanMultipleOf20 = n % 20 == 18; 
 
         return oneLessThanMultipleOf20 || twoLessThanMultipleOf20;
     }
