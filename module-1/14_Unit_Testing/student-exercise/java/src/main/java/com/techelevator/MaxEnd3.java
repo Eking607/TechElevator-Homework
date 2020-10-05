@@ -16,7 +16,7 @@ public class MaxEnd3 {
             nums[i] = largerNum;
         }
 
-        return nums;
+        return nums; 
     }
 
 }

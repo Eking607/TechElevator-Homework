@@ -10,9 +10,6 @@ public class AnimalGroupNameTest {
 	
 	public void return_animal_group() {
 		
-		AnimalGroupName myGroup = new AnimalGroupName();
-		
-		String theGroup = myGroup.getHerd("ElePhaNt");
 		
 	}
 
