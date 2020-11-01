@@ -3,6 +3,7 @@ package com.techelevator.auctions.controller;
 import com.techelevator.auctions.DAO.AuctionDAO;
 import com.techelevator.auctions.DAO.MemoryAuctionDAO;
 import com.techelevator.auctions.model.Auction;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,10 +12,54 @@ import java.util.List;
 @RequestMapping("/auctions")
 public class AuctionController {
 
-    private AuctionDAO dao;
+	private AuctionDAO dao;
 
-    public AuctionController() {
-        this.dao = new MemoryAuctionDAO();
+	public AuctionController() {
+		this.dao = new MemoryAuctionDAO();
+	}
+
+//	/**
+//	 * Return All Auctions.
+//	 */
+//	@RequestMapping(path= "", method = RequestMethod.GET)
+//	public List<Auction> list() {
+//		return dao.list();
+//	}
+
+	/**
+	 * Return A Specific Auction.
+	 */
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
+	public Auction get(@PathVariable int id) {
+		return dao.get(id);
+	}
+
+	/**
+	 * Create An Auction
+	 */
+
+	@RequestMapping(path = "", method = RequestMethod.POST)
+	public Auction create(@RequestBody Auction id) {
+		return dao.create(id);
+	}
+
+	/**
+	 * Search Auction By Title and Price and return auction list
+	 */
+
+    @RequestMapping( path = "", method = RequestMethod.GET)
+    public List<Auction> list(@RequestParam(defaultValue = "") String title_like, @RequestParam(defaultValue = "0") double currentBid_lte) {
+    	if (title_like != null && currentBid_lte > 0) {
+    		return dao.searchByTitleAndPrice(title_like, currentBid_lte);
+    	}
+    	
+        if (title_like != null) {
+            return dao.searchByTitle(title_like);
+        }
+        if(currentBid_lte > 0) {
+            return dao.searchByPrice(currentBid_lte);
+        }
+
+        return dao.list();
     }
-
 }
